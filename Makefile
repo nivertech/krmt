@@ -13,7 +13,7 @@ REDIS_SRC=$(REDIS_BASE)/src
 
 # Protip: for best performance: compile under clang with -O0 -flto (yes, really)
 # _DEFAULT_SOURCE provides built-in M_ macros for math constants under Linux
-CFLAGS:=-O2 -g -Wall -pedantic -std=c99 -Wno-unused-function -D_DEFAULT_SOURCE $(CFLAGS)
+CFLAGS:=-O2 -g -Wall -pedantic -std=c99 -Wno-unused-function -D_DEFAULT_SOURCE -DM_PI=3.1415926535897932384626 -DM_PI_2=M_PI/2 $(CFLAGS)
 FINAL_CFLAGS:=$(CFLAGS) -I$(LUA_SRC) -I$(REDIS_SRC)
 
 # Flags for .so compiling; OS X be crazy
